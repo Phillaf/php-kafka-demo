@@ -1,0 +1,32 @@
+version: '2'
+services:
+  php:
+    build: ./docker/php
+    volumes:
+        - ./:/usr/share/nginx/www
+    working_dir: /usr/share/nginx/www
+
+  nginx:
+    build: ./docker/nginx
+    links:
+        - php
+    volumes_from:
+        - php
+    ports:
+      - 80:80
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - 2181:2181
+
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - 9092:9092
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: kafka
+      KAFKA_CREATE_TOPICS: "test:1:1"
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
