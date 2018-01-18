@@ -12,12 +12,16 @@ On your own machine you should have:
 ## Run the demo
 
 ```
-composer update
 docker-compose up -d
 ```
 
-Send your message in the querystring by visiting `http://localhost?hello`  
-Run `dc exec php php /usr/share/nginx/www/public/consumer.php` to print the message in the shell
+Send your message in the querystring by visiting `http://localhost?hello`.
+
+```
+dc exec php php /usr/share/nginx/www/public/consumer.php
+```
+
+The line above should print the messages in the shell
 
 ## Documentation
 
