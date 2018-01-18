@@ -21,6 +21,6 @@ Run `dc exec php php /usr/share/nginx/www/public/consumer.php` to print the mess
 
 ## Documentation
 
-- Docker images for (kafka)[https://hub.docker.com/r/wurstmeister/kafka/] and (zookeeper)[https://hub.docker.com/r/wurstmeister/zookeeper/]
-- (librdkafka)[https://github.com/edenhill/librdkafka], a C implementation of the kafka protocol
-- (php-rdkafka)[https://github.com/arnaud-lb/php-rdkafka], a kafka client for php
+- Docker images for [kafka](https://hub.docker.com/r/wurstmeister/kafka/) and [zookeeper](https://hub.docker.com/r/wurstmeister/zookeeper/)
+- [librdkafka](https://github.com/edenhill/librdkafka), a C implementation of the kafka protocol
+- [php-rdkafka](https://github.com/arnaud-lb/php-rdkafka), a kafka client for php
