@@ -8,7 +8,6 @@ On your own machine you should have:
 
 - docker
 - docker-compose
-- composer
 
 ## Run the demo
 
