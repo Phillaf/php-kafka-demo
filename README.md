@@ -18,7 +18,7 @@ docker-compose up -d
 Send your message in the querystring by visiting `http://localhost?hello`.
 
 ```
-dc exec php php /usr/share/nginx/www/public/consumer.php
+docker-compose exec php php /usr/share/nginx/www/public/consumer.php
 ```
 
 The line above should print the messages in the shell
