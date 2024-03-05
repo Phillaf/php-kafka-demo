@@ -6,8 +6,9 @@ RUN apt-get update --fix-missing \
 
 # DEPENDENCIES
 RUN apt-get update --fix-missing \
-    && apt-get install -y  python \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get install -y python3 \
+    && rm -rf /var/lib/apt/lists/* \
+    && ln -s /usr/bin/python3 /usr/bin/python
 
 # KAFKA
 RUN git clone --depth 1 --branch v0.11.1 https://github.com/edenhill/librdkafka.git \

@@ -1,7 +1,8 @@
 <?php
 
-$producer = new \RdKafka\Producer();
-$producer->setLogLevel(LOG_DEBUG);
+$conf = new RdKafka\Conf();
+$conf->set('log_level', (string) LOG_DEBUG);
+$producer = new \RdKafka\Producer($conf);
 
 if ($producer->addBrokers("kafka:9092") < 1) {
     echo "Failed adding brokers\n";

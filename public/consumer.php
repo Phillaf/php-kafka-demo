@@ -1,7 +1,9 @@
 <?php
 
-$consumer = new \RdKafka\Consumer();
-$consumer->setLogLevel(LOG_DEBUG);
+$conf = new RdKafka\Conf();
+$conf->set('log_level', (string) LOG_DEBUG);
+$consumer = new \RdKafka\Consumer($conf);
+
 $consumer->addBrokers("kafka:9092");
 
 $topic = $consumer->newTopic("test");
